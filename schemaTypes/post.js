@@ -7,27 +7,21 @@ export default defineType({
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Proyekt adı',
       type: 'string',
     }),
-    defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
+    {
+      name: 'tags',
+      title: 'Texnologiyalar',
+      type: 'array',
+      of: [{type: 'string'}], // veya farklı bir türde belirlenen seçenekler olabilir
       options: {
-        source: 'title',
-        maxLength: 96,
-      },
-    }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    }),
+        layout: 'tags' // Bu, seçeneklerin etiket biçiminde görüntülenmesini sağlar
+      }
+    },
     defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Proyekt şəkli',
       type: 'image',
       options: {
         hotspot: true,
@@ -43,11 +37,6 @@ export default defineType({
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
-    }),
-    defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
     }),
   ],
 
