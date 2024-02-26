@@ -1,27 +1,13 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'post',
-  title: 'Proyekt',
+  name: 'skill',
+  title: 'Bilikler',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Proyekt adı',
-      type: 'string',
-    }),
-    {
-      name: 'tags',
-      title: 'Texnologiyalar',
-      type: 'array',
-      of: [{type: 'string'}], // veya farklı bir türde belirlenen seçenekler olabilir
-      options: {
-        layout: 'tags' // Bu, seçeneklerin etiket biçiminde görüntülenmesini sağlar
-      }
-    },
-    defineField({
-      name: 'url',
-      title: 'Url',
+      title: 'Bilik adı',
       type: 'string',
     }),
     defineField({
